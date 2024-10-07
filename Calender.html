@@ -12,7 +12,6 @@
   <link rel="icon" type="image/png" href="img/symbol.png">
   <link rel="apple-touch-icon" type="image/png" href="img/symbol.png">
 
-
   <style>
     /* Grundlayout für die Seite */
     body {
@@ -187,6 +186,58 @@
       margin-top: 20px;
       color: #f5f5f5;
     }
+
+    /* Media Queries für Bildschirme mit einer Breite von maximal 768px (typische Mobilgeräte) */
+    @media (max-width: 768px) {
+      body {
+        background-size: contain; /* Hintergrundbild für kleinere Bildschirme anpassen */
+      }
+
+      header {
+        font-size: 2rem; /* Schriftgröße des Headers anpassen */
+      }
+
+      main {
+        flex-direction: column; /* Inhalte vertikal anordnen statt nebeneinander */
+        padding: 10px; /* Weniger Padding für kleinere Bildschirme */
+      }
+
+      #calendar iframe {
+        width: 100%; /* Kalender auf die volle Breite des Bildschirms skalieren */
+        height: 400px; /* Höhe für kleine Bildschirme anpassen */
+      }
+
+      .instructions {
+        width: 90%; /* Boxen flexibler gestalten, damit sie nicht zu breit auf mobilen Geräten sind */
+        margin-bottom: 20px; /* Abstand zwischen den Boxen erhöhen */
+      }
+
+      .appointment-form {
+        width: 90%; /* Formular auf volle Breite skalieren */
+        padding: 30px; /* Weniger Padding für kleinere Bildschirme */
+      }
+
+      .appointment-form h3 {
+        font-size: 1.5rem; /* Schriftgröße des Formular-Headers anpassen */
+      }
+
+      .appointment-form input,
+      .appointment-form textarea {
+        padding: 10px; /* Weniger Padding in den Eingabefeldern */
+      }
+
+      .appointment-form button {
+        width: 100%; /* Button auf volle Breite skalieren */
+      }
+
+      .back-to-home a {
+        font-size: 1rem; /* Schriftgröße des Links zur Startseite anpassen */
+      }
+
+      footer {
+        font-size: 0.9rem; /* Schriftgröße im Footer anpassen */
+      }
+    }
   </style>
 </head>
 
@@ -257,10 +308,10 @@
   </p>
 </footer>
 
-
 </body>
 
 </html>
+
 
 
 
