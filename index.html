@@ -15,8 +15,6 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/symbol.png">
-  <link rel="icon" type="image/png" href="img/symbol.png">
-  <link rel="icon" type="image/png" href="img/symbol.png">
   <link rel="apple-touch-icon" type="image/png" href="img/symbol.png">
 
   <link rel="manifest" href="site.webmanifest">
@@ -30,50 +28,277 @@
 
   <!-- Custom CSS -->
   <style>
-    /* Slider soll von Rand zu Rand gehen */
+    /* Grundlegendes Layout */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+      color: #f5f5f5;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #444;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-menu li {
+      margin: 0 15px;
+    }
+
+    .nav-menu a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+      color: #f4b41a;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('img/shisha-room-bg.jpg') no-repeat center center/cover;
+      text-align: center;
+      color: #fff;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #f4b41a;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .btn-primary {
+      background-color: #f4b41a;
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #d89b0b;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background-color: #222;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      text-align: center;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #f4b41a;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #3a3a3a, #111);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-item h3 {
+      font-size: 1.7rem;
+      color: #f4b41a;
+      margin-bottom: 10px;
+    }
+
+    .feature-item p {
+      font-size: 1rem;
+      color: #f5f5f5;
+    }
+
+    /* Slider */
     .image-slider {
-      width: 100vw;  /* Slider nimmt die volle Breite des Viewports ein */
-      margin-left: calc(-50vw + 50%);  /* Zentriert den Slider */
-      position: relative;
+      width: 100%;
+      padding: 50px 0;
+      background-color: #111;
     }
 
     .swiper-container {
-      width: 100vw;  /* Die Breite des Containers wird auf den vollen Viewport gesetzt */
-      height: 400px; /* Setze eine Höhe für den Slider */
+      width: 100%;
+      height: 300px;
     }
 
     .swiper-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;  /* Stellt sicher, dass das Bild den Container ausfüllt */
+      object-fit: cover;
     }
 
-    /* Navigationstasten des Sliders in Gold */
     .swiper-button-next,
     .swiper-button-prev {
-      color: #f4b41a; /* Setzt die Farbe der Pfeile auf Gold */
-      position: absolute;
-      bottom: 10px; /* Positioniert die Pfeile am unteren Rand des Sliders */
+      color: #f4b41a;
     }
 
-    .swiper-button-next {
-      right: 10px;
-    }
-
-    .swiper-button-prev {
-      left: 10px;
-    }
-
-    /* Hover-Effekt für die Pfeile */
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
-      color: #d89b0b; /* Dunklerer Goldton bei Hover */
+      color: #d89b0b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+      color: #f5f5f5;
+    }
+
+    footer a {
+      color: #f4b41a;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Cookie-Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px; /* Maximale Breite für größere Bildschirme */
+      margin: 0 auto; /* Zentriert den Banner */
+      z-index: 1000;
+    }
+
+    .cookie-btn {
+      background-color: #ffc107;
+      border: none;
+      color: #111;
+      padding: 10px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cookie-btn:hover {
+      background-color: #d89b0b;
+    }
+
+    .cookie-hidden {
+      display: none;
+    }
+
+    /* Media Queries für Mobilgeräte */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .feature-item {
+        width: 100%;
+      }
+
+      .swiper-container {
+        height: 250px;
+      }
+
+      .cookie-banner {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .cookie-btn {
+        margin: 10px 0 0;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .btn-primary {
+        padding: 10px 15px;
+        font-size: 1rem;
+      }
+
+      .swiper-container {
+        height: 200px;
+      }
+
+      .cookie-banner {
+        padding: 10px;
+      }
     }
 
   </style>
 </head>
 
 <body>
+
+  <div id="cookie-banner" class="cookie-banner cookie-hidden">
+    <p>Diese Website verwendet Cookies, um das Nutzererlebnis zu verbessern. Möchten Sie Cookies akzeptieren?</p>
+    <button id="accept-cookies" class="cookie-btn">Akzeptieren</button>
+    <button id="decline-cookies" class="cookie-btn">Nicht akzeptieren</button>
+  </div>
+
   <header>
     <div class="header-container">
       <h1>VIP Shishazimmer Vermietung</h1>
@@ -131,14 +356,13 @@
     </section>
   </main>
 
-<footer>
-  <p>
-    Kontakt: <a href="mailto:info@shishazimmer.de">info@shishazimmer.de</a> |
-    <a href="Impressum.html">Impressum</a> |
-    © 2024 VIP Shishazimmer
-  </p>
-</footer>
-
+  <footer>
+    <p>
+      Kontakt: <a href="mailto:info@shishazimmer.de">info@shishazimmer.de</a> |
+      <a href="Impressum.html">Impressum</a> |
+      © 2024 VIP Shishazimmer
+    </p>
+  </footer>
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -153,10 +377,32 @@
         prevEl: '.swiper-button-prev',
       },
     });
+
+    // Cookie-Banner JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptCookiesBtn = document.getElementById('accept-cookies');
+      const declineCookiesBtn = document.getElementById('decline-cookies');
+
+      // Überprüfen, ob der Benutzer bereits eine Entscheidung getroffen hat
+      if (!localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.classList.remove('cookie-hidden'); // Banner anzeigen, wenn keine Entscheidung getroffen wurde
+      }
+
+      // Event-Listener für "Akzeptieren"
+      acceptCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'yes');
+        cookieBanner.classList.add('cookie-hidden');
+      });
+
+      // Event-Listener für "Nicht akzeptieren"
+      declineCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'no');
+        cookieBanner.classList.add('cookie-hidden');
+      });
+    });
   </script>
 
 </body>
 
 </html>
-
-
