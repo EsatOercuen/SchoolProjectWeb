@@ -1,10 +1,43 @@
+/* Variablen für wiederverwendbare Farben */
+:root {
+  --primary-color: #f4b41a;
+  --secondary-color: #d89b0b;
+  --background-color: #111;
+  --text-color: #f5f5f5;
+}
+
 /* Allgemeine Einstellungen */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #111;
-  color: #f5f5f5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Fokus-Styling für bessere Zugänglichkeit */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Responsive Schriftgrößen */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
 }
 
 /* Header */
@@ -12,7 +45,7 @@ header {
   background-color: #333;
   padding: 20px 0;
   text-align: center;
-  color: #f5f5f5;
+  color: var(--text-color);
 }
 
 .header-container {
@@ -35,9 +68,9 @@ h1 {
 
 /* Navigation */
 nav {
-  background-color: #333; /* Hintergrundfarbe des Navigationsbereichs */
+  background-color: #333;
   display: flex;
-  justify-content: center; /* Zentriert die Inhalte horizontal */
+  justify-content: center;
   padding: 10px 0;
   width: 100%;
   text-align: center;
@@ -52,11 +85,11 @@ nav {
 }
 
 .nav-menu li {
-  margin: 0 15px; /* Abstand zwischen den Listenelementen */
+  margin: 0 15px;
 }
 
 .nav-menu a {
-  color: #f5f5f5;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
@@ -64,7 +97,7 @@ nav {
 }
 
 .nav-menu a:hover {
-  color: #f4b41a; /* Hover-Farbe für die Links */
+  color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -77,7 +110,7 @@ nav {
 
 .hero h2 {
   font-size: 3rem;
-  color: #f4b41a;
+  color: var(--primary-color);
 }
 
 .hero p {
@@ -86,22 +119,22 @@ nav {
 }
 
 .btn-primary {
-  background-color: #f4b41a;
-  color: #111;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   padding: 15px 30px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
   display: inline-block;
-  margin-top: 20px; /* Fügt Abstand zum oberen Element hinzu */
+  margin-top: 20px;
 }
 
 .btn-primary:hover {
-  background-color: #d89b0b;
+  background-color: var(--secondary-color);
 }
 
-/* Features Section - Osmanischer Stil */
+/* Features Section */
 .features {
   display: flex;
   justify-content: space-around;
@@ -113,49 +146,49 @@ nav {
   text-align: center;
   width: 30%;
   padding: 20px;
-  border: 1px solid #f4b41a;
+  border: 1px solid var(--primary-color);
   border-radius: 10px;
-  background: linear-gradient(to bottom, #3a3a3a, #111);  /* Osmanischer Stil mit Textur */
+  background: linear-gradient(to bottom, #3a3a3a, var(--background-color));
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .feature-item h3 {
   font-size: 1.7rem;
-  color: #f4b41a;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
 .feature-item p {
   font-size: 1.1rem;
-  color: #f5f5f5;
+  color: var(--text-color);
 }
 
 /* Image Slider */
 .image-slider {
   padding: 50px 0;
-  background-color: #111;
+  background-color: var(--background-color);
 }
 
 .swiper-container {
   width: 100vw;
   height: 400px;
   position: relative;
-  border-top: 4px solid #f4b41a;
-  border-bottom: 4px solid #f4b41a;
+  border-top: 4px solid var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: sepia(20%); /* Leichter Sepia-Effekt für osmanischen Stil */
+  filter: sepia(20%);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #f4b41a; /* Setzt die Farbe der Pfeile auf Gold */
+  color: var(--primary-color);
   position: absolute;
-  bottom: 10px; /* Positioniert die Pfeile am unteren Rand des Sliders */
+  bottom: 10px;
 }
 
 .swiper-button-next {
@@ -166,10 +199,9 @@ nav {
   left: 10px;
 }
 
-/* Hover-Effekt für die Pfeile */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #d89b0b; /* Dunklerer Goldton bei Hover */
+  color: var(--secondary-color);
 }
 
 /* Footer */
@@ -177,60 +209,92 @@ footer {
   background-color: #333;
   padding: 20px;
   text-align: center;
-  color: #f5f5f5;
+  color: var(--text-color);
 }
 
 footer a {
-  color: #f4b41a;
-  text-decoration: none;
+  color: var(--primary-color);
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
-/* Styling für die Boxen links und rechts */
-.instructions {
-  width: 20%;
-  padding: 20px;
-  border: 1px solid #f4b41a; /* Goldene Umrandung */
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 25px 30px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.7); /* Halbtransparentes Schwarz */
-  color: #f5f5f5;
-  text-align: center; /* Zentriere den Text horizontal */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: flex; /* Flexbox aktivieren */
-  flex-direction: column; /* Inhalte von oben nach unten */
-  justify-content: center; /* Zentriert vertikal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1000;
 }
 
-/* Überschrift in den Boxen */
-.instructions h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #f4b41a;
+.cookie-banner p {
+  margin: 0;
+  padding-right: 20px;
+  font-size: 1.1rem;
+  flex-grow: 1;
 }
 
-/* Absatztext in den Boxen */
-.instructions p {
+.cookie-btn {
+  background-color: #ffc107;
+  border: none;
+  color: var(--background-color);
+  padding: 15px 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  border-radius: 5px;
   font-size: 1rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  text-align: center; /* Text innerhalb von Absätzen zentriert */
+  transition: background-color 0.3s ease;
 }
 
-/* Subheading hover effect */
-.impressum-container h2:hover {
-  transform: scale(1.1);
-  color: #d89b0b; /* Color shift on hover */
+.cookie-btn:hover {
+  background-color: var(--secondary-color);
 }
 
-.impressum-container h2:hover::before {
-  content: "Mehr Informationen"; /* Show extra text when hovered */
-  position: absolute;
-  visibility: visible;
-  opacity: 1;
-  color: #d89b0b;
+.cookie-hidden {
+  display: none;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .feature-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .swiper-container {
+    height: 300px;
+  }
+
+  .cookie-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cookie-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 
