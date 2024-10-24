@@ -1,0 +1,230 @@
+  /* Grundlayout für die Seite */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111; /* Schwarzer Hintergrund */
+      color: #f5f5f5;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-menu3 {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu3 li {
+      margin: 0 15px;
+    }
+
+    .nav-menu3 a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-menu3 a:hover {
+      color: #f4b41a;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #f4b41a; /* Goldene Schriftfarbe */
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      position: relative;
+      background-color: transparent; /* Hintergrund auf transparent gesetzt */
+    }
+
+    header::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding: 20px;
+    }
+
+    #calendar {
+      margin: 20px;
+    }
+
+    /* Styling für die Boxen links und rechts */
+    .instructions3 {
+      width: 20%;
+      padding: 20px;
+      border: 1px solid #f4b41a; /* Goldene Umrandung */
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.7); /* Halbtransparentes Schwarz */
+      color: #f5f5f5;
+      text-align: center; /* Zentriere den Text horizontal */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex; /* Flexbox aktivieren */
+      flex-direction: column; /* Inhalte von oben nach unten */
+      justify-content: center; /* Zentriert vertikal */
+    }
+
+    .instructions3 h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #f4b41a;
+    }
+
+    .instructions3 p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      text-align: center; /* Zentriert den Absatztext */
+    }
+
+    /* Styling für das Formular */
+    .appointment-form3 {
+      width: 500px;
+      margin-top: 40px;
+      padding: 75px;
+      border: 1px solid #f4b41a; /* Goldene Umrandung */
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #f5f5f5;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .appointment-form3 h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #f4b41a;
+    }
+
+    .appointment-form3 input,
+    .appointment-form3 textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border: 1px solid #f4b41a;
+      border-radius: 5px;
+      background-color: #222;
+      color: #f5f5f5;
+    }
+
+    .appointment-form3 textarea {
+      height: 150px;
+    }
+
+    .appointment-form3 button {
+      padding: 15px 30px;
+      background-color: #f4b41a;
+      color: #111;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .appointment-form3 button:hover {
+      background-color: #d89b0b;
+    }
+
+    /* Link zur Startseite */
+    .back-to-home3 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-to-home3 a {
+      text-decoration: none;
+      color: #f4b41a;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-to-home3 a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries für Bildschirme mit einer Breite von maximal 768px (typische Mobilgeräte) */
+    @media (max-width: 768px) {
+      body {
+        background-size: contain; /* Hintergrundbild für kleinere Bildschirme anpassen */
+      }
+
+      header {
+        font-size: 2rem; /* Schriftgröße des Headers anpassen */
+      }
+
+      main {
+        flex-direction: column; /* Inhalte vertikal anordnen statt nebeneinander */
+        padding: 10px; /* Weniger Padding für kleinere Bildschirme */
+      }
+
+      #calendar3 iframe {
+        width: 100%; /* Kalender auf die volle Breite des Bildschirms skalieren */
+        height: 400px; /* Höhe für kleine Bildschirme anpassen */
+      }
+
+      .instructions3 {
+        width: 90%; /* Boxen flexibler gestalten, damit sie nicht zu breit auf mobilen Geräten sind */
+        margin-bottom: 20px; /* Abstand zwischen den Boxen erhöhen */
+      }
+
+      .appointment-form3 {
+        width: 90%; /* Formular auf volle Breite skalieren */
+        padding: 30px; /* Weniger Padding für kleinere Bildschirme */
+      }
+
+      .appointment-form3 h3 {
+        font-size: 1.5rem; /* Schriftgröße des Formular-Headers anpassen */
+      }
+
+      .appointment-form3 input,
+      .appointment-form textarea {
+        padding: 10px; /* Weniger Padding in den Eingabefeldern */
+      }
+
+      .appointment-form3 button {
+        width: 100%; /* Button auf volle Breite skalieren */
+      }
+
+      .back-to-home3 a {
+        font-size: 1rem; /* Schriftgröße des Links zur Startseite anpassen */
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      color: #f5f5f5;
+    }
+
+    footer a {
+      color: #f4b41a;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }

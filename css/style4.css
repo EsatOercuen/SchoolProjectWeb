@@ -1,0 +1,116 @@
+/* Variablen für wiederverwendbare Farben */
+:root {
+  --primary-color: #f4b41a;
+  --secondary-color: #d89b0b;
+  --background-color: #111;
+  --text-color: #f5f5f5;
+}
+
+/* Allgemeine Einstellungen */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Fokus-Styling für bessere Zugänglichkeit */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Responsive Schriftgrößen */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+/* Zusätzliche Styles für das Impressum */
+    .impressum-container4 {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #f4b41a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .impressum-container4 h1 {
+      font-size: 2.5rem;
+      color: #f4b41a;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .impressum-container4 p,
+    .impressum-container4 h2 {
+      font-size: 1rem;
+      color: #f5f5f5;
+      line-height: 1.8;
+    }
+
+    /* Gold-colored heading for "Angaben" */
+    .impressum-container4 .main-heading {
+      font-size: 1.2rem;
+      color: #f4b41a;
+      margin-bottom: 15px;
+    }
+
+    /* Basic styling for headings */
+    .impressum-container4 h2 {
+      font-size: 1.5rem;
+      color: #f4b41a;
+      margin-top: 20px;
+    }
+
+    /* Styling for contact section outside the box */
+    .contact-info4 {
+      background-color: #333;
+      color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      border-radius: 5px;
+    }
+
+    .contact-info4 a {
+      color: #f4b41a;
+      text-decoration: none;
+    }
+
+    .contact-info4 a:hover4 {
+      text-decoration: underline;
+    }
+
+    /* Styling for index link */
+    .index-link4 {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+    }
+
+    .index-link4 a {
+      color: #f4b41a;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .index-link a:hover4 {
+      text-decoration: underline;
+    }

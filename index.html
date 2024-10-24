@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js" lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIP Shishazimmer Vermietung</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="description" content="VIP Shishazimmer Vermietung">
+  <meta property="og:title" content="VIP Shishazimmer Vermietung">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/symbol.png">
+  <link rel="apple-touch-icon" type="image/png" href="img/symbol.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <!-- Google Fonts für stilvolle Schriftarten -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+
+  <!-- Swiper CSS für den Slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+
+</head>
+
+<body>
+
+  <div id="cookie-banner" class="cookie-banner cookie-hidden">
+    <p>Diese Website verwendet Cookies, um das Nutzererlebnis zu verbessern. Möchten Sie Cookies akzeptieren?</p>
+    <button id="accept-cookies" class="cookie-btn">Akzeptieren</button>
+    <button id="decline-cookies" class="cookie-btn">Nicht akzeptieren</button>
+  </div>
+
+  <header>
+    <div class="header-container">
+      <h1>VIP Shishazimmer Vermietung</h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="mitarbeiter.html">Unser Team</a></li>
+      <li><a href="Calender.html">Kalender</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h2>Herzlich willkommen zur Vermietung unseres luxuriösen Shishazimmers!</h2>
+      <p>Erlebe Luxus in einer stilvollen Umgebung</p>
+      <a href="Calender.html" class="btn-primary">Jetzt buchen</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-item">
+        <h3>Exklusive Räume</h3>
+        <p>Unsere Zimmer bieten eine private und luxuriöse Atmosphäre, perfekt für besondere Anlässe.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Premium Ausstattung</h3>
+        <p>Von modernster Technologie bis hin zu erstklassigen Möbeln – unser Shishazimmer ist auf höchstem Niveau ausgestattet.</p>
+      </div>
+    </section>
+
+    <!-- Bilderslider -->
+    <section class="image-slider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Bild 1 -->
+          <div class="swiper-slide">
+            <img src="img/swipper1.jpg" alt="Luxuriöse Shisharäume">
+          </div>
+          <!-- Bild 2 -->
+          <div class="swiper-slide">
+            <img src="img/swipper2.jpg" alt="Premium Ausstattung">
+          </div>
+          <!-- Bild 3 -->
+          <div class="swiper-slide">
+            <img src="img/swipper3.jpg" alt="Exklusive Atmosphäre">
+          </div>
+        </div>
+        <!-- Navigationstasten (unten platziert) -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Kontakt: <a href="mailto:info@shishazimmer.de">info@shishazimmer.de</a> |
+      <a href="Impressum.html">Impressum</a> |
+      © 2024 VIP Shishazimmer
+    </p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Cookie-Banner JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptCookiesBtn = document.getElementById('accept-cookies');
+      const declineCookiesBtn = document.getElementById('decline-cookies');
+
+      // Überprüfen, ob der Benutzer bereits eine Entscheidung getroffen hat
+      if (!localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.classList.remove('cookie-hidden'); // Banner anzeigen, wenn keine Entscheidung getroffen wurde
+      }
+
+      // Event-Listener für "Akzeptieren"
+      acceptCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'yes');
+        cookieBanner.classList.add('cookie-hidden');
+      });
+
+      // Event-Listener für "Nicht akzeptieren"
+      declineCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'no');
+        cookieBanner.classList.add('cookie-hidden');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
