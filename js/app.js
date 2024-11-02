@@ -46,3 +46,31 @@
   </script>
 </body>
 </html>
+
+// Funktion zum Abrufen der Wetterdaten
+function fetchWeather() {
+  const apiKey = "0b400104905183857022958dc4e8ad48"; // Dein OpenWeatherMap API-Schlüssel
+  const city = "Heilbronn"; // Stadt kann nach Bedarf angepasst werden
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=de`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const temperature = data.main.temp;
+      const description = data.weather[0].description;
+      const iconCode = data.weather[0].icon;
+      const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+
+      document.getElementById("weather-info").innerHTML = `
+        <img src="${iconUrl}" alt="${description}" />
+        <span>${city}: ${temperature}°C, ${description}</span>
+      `;
+    })
+    .catch(error => {
+      console.error("Fehler beim Laden der Wetterdaten:", error);
+      document.getElementById("weather-info").innerText = "Wetterdaten konnten nicht geladen werden.";
+    });
+}
+
+// Wetterdaten abrufen, wenn das Dokument geladen ist
+document.addEventListener("DOMContentLoaded", fetchWeather);
