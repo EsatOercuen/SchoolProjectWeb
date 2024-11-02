@@ -9,7 +9,7 @@
     }
 
     h1 {
-      color: #fff;
+      color: #FFC107;
       font-size: 2rem;
       margin-top: 40px;
     }
@@ -95,3 +95,4 @@
     footer a:hover {
       text-decoration: underline;
     }
+
