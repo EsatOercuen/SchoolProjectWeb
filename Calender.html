@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="de">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +7,6 @@
   <link rel="stylesheet" href="css/style3.css">
   <link rel="icon" type="image/png" href="img/symbol.png">
   <link rel="apple-touch-icon" type="image/png" href="img/symbol.png">
-
 </head>
 
 <body>
@@ -18,37 +16,47 @@
     Kalender - VIP Shishazimmer - Reservierung
   </header>
 
-  <main>
-    <!-- Schritt-für-Schritt Anleitung links -->
-    <div class="instructions3">
-      <h3>Schritt 1</h3>
-      <p>Schauen Sie zuerst in Ihrem eigenen Google Kalender nach, ob Sie Zeit haben. Wählen Sie anschließend einen freien Zeitraum aus.</p>
+<main>
 
-      <h3>Schritt 2</h3>
-      <p>Bitte füllen Sie das untenstehende Formular aus und geben Sie dabei auch das gewünschte Datum an. Nach dem Absenden erhält der Veranstalter automatisch eine E-Mail mit den eingegebenen Informationen.</p>
+  <!-- Schritt-für-Schritt Anleitung links -->
+  <div class="instructions3">
+    <h3>Schritt 1</h3>
+    <p>Schauen Sie zuerst in Ihrem eigenen Google Kalender nach, ob Sie Zeit haben. Wählen Sie anschließend einen freien Zeitraum aus.</p>
 
-      <h3>Schritt 3</h3>
-      <p>Warten Sie auf eine Bestätigung per E-Mail.</p>
+    <h3>Schritt 2</h3>
+    <p>Bitte füllen Sie das untenstehende Formular aus und geben Sie dabei auch das gewünschte Datum an. Nach dem Absenden erhält der Veranstalter automatisch eine E-Mail mit den eingegebenen Informationen.</p>
+
+    <h3>Schritt 3</h3>
+    <p>Warten Sie auf eine Bestätigung per E-Mail.</p>
+  </div>
+
+  <!-- Wetter-Abschnitt über dem Kalender -->
+  <div class="main-content">
+    <div id="weather" class="weather">
+      <h2>Aktuelles Wetter</h2>
+      <p id="weather-info">Wetterdaten werden geladen...</p>
     </div>
 
     <!-- Google Kalender in der Mitte -->
     <div id="calendar3">
       <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
+  </div>
 
-    <div class="instructions3">
-      <h3>Information</h3>
-      <p>Bitte beachten Sie, dass alle Reservierungen so schnell wie möglich bearbeitet werden.</p>
-      <p>Falls Sie Fragen haben, kontaktieren Sie uns direkt unter info@shishazimmer.de.</p>
-      <p>Die Preise werden je nach Bedarf ermittelt und per E-Mail geklärt.</p> <!-- Neuer Absatz hinzugefügt -->
-    </div>
+  <div class="instructions3">
+    <h3>Information</h3>
+    <p>Bitte beachten Sie, dass alle Reservierungen so schnell wie möglich bearbeitet werden.</p>
+    <p>Falls Sie Fragen haben, kontaktieren Sie uns direkt unter info@shishazimmer.de.</p>
+    <p>Die Preise werden je nach Bedarf ermittelt und per E-Mail geklärt.</p>
+  </div>
 
-  </main>
+</main>
+
 
   <!-- Größeres Formular zur Terminvereinbarung -->
   <section class="appointment-form3">
     <h3>Termin vereinbaren</h3>
-    <form action="mailto:esatorcun@gmail.com" method="post" enctype="text/plain">
+    <form action="" method="post" enctype="text/plain">
       <label for="name">Vorname</label>
       <input type="text" id="name" name="name" placeholder="Ihr Vorname" required>
 
@@ -79,10 +87,39 @@
     </p>
   </footer>
 
+  <!-- JavaScript zur Wetterabfrage -->
+  <script>
+    // Funktion zum Abrufen der Wetterdaten
+    function fetchWeather() {
+      const apiKey = "0b400104905183857022958dc4e8ad48"; // Dein OpenWeatherMap API-Schlüssel
+      const city = "Heilbronn"; // Stadt kann nach Bedarf angepasst werden
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=de`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const temperature = data.main.temp;
+          const description = data.weather[0].description;
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+
+          document.getElementById("weather-info").innerHTML = `
+            <img src="${iconUrl}" alt="${description}" />
+            <span>${city}: ${temperature}°C, ${description}</span>
+          `;
+        })
+        .catch(error => {
+          console.error("Fehler beim Laden der Wetterdaten:", error);
+          document.getElementById("weather-info").innerText = "Wetterdaten konnten nicht geladen werden.";
+        });
+    }
+
+    // Wetterdaten abrufen, wenn das Dokument geladen ist
+    document.addEventListener("DOMContentLoaded", fetchWeather);
+  </script>
+
 </body>
-
 </html>
-
 
 
 
