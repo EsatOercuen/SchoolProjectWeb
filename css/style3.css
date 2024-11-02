@@ -179,7 +179,7 @@
       }
 
       #calendar3 iframe {
-        width: 100%; /* Kalender auf die volle Breite des Bildschirms skalieren */
+        width: 90%; /* Kalender auf die volle Breite des Bildschirms skalieren */
         height: 400px; /* Höhe für kleine Bildschirme anpassen */
       }
 
@@ -203,11 +203,13 @@
       }
 
       .appointment-form3 button {
-        width: 100%; /* Button auf volle Breite skalieren */
+        width: 90%; /* Button auf volle Breite skalieren */
       }
 
       .back-to-home3 a {
         font-size: 1rem; /* Schriftgröße des Links zur Startseite anpassen */
+        margin-top: 20px;
+        margin-bottom: 40px; /* Erhöht den Abstand zum Footer */
       }
     }
 
@@ -228,3 +230,32 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Wetter-Box angepasst an das dunkle Design */
+    .weather {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #f4b41a; /* Goldene Umrandung */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Halbtransparentes Schwarz */
+    color: #f5f5f5;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .weather h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f4b41a; /* Goldene Schriftfarbe */
+    }
+
+    #weather-info {
+    font-size: 1rem;
+    color: #f5f5f5; /* Angepasst an den Text der Seite */
+    }
+
+
+
+
